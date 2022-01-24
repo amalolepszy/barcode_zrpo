@@ -4,7 +4,7 @@ close all;
 clc;
 
 %wczytanie obrazu do pamięci podręcznej
-a = imread('barcode.jpg');
+a = imread('qr-code.jpg');
 imshow(a);
 
 %użycie funkcji w celu przypisania wartości i wyświetlenie w konsoli
@@ -19,7 +19,7 @@ disp("barcode type: " + detectedBarcode);
 % Zlokalizowanie początku i umieszczenie linii w miejscu kodu paskowego
 % Wyświetlenie obrazu
 xyBegin = loc(1,:);
-Imsg = insertText(a,xyBegin,msg,'BoxOpacity',1,'FontSize',30);
+Imsg = insertText(a,xyBegin,msg,'BoxOpacity',1,'FontSize',20);
 imSize = size(Imsg);
 Imsg = insertShape(Imsg,'Line',[1 xyBegin(2) imSize(2) xyBegin(2)],'LineWidth',5);
 imshow(Imsg);
