@@ -3,6 +3,8 @@
 close all;
 clc;
 
+dsadsadsadsadsa
+
 %wczytanie obrazu do pamięci podręcznej
 a = imread('qr-code.jpg');
 imshow(a);
