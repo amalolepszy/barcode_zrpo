@@ -3,10 +3,9 @@
 close all;
 clc;
 
-dsadsadsadsadsa
 
 %wczytanie obrazu do pamięci podręcznej
-a = imread('qr-code.jpg');
+a = imread('code-128.jpg');
 imshow(a);
 
 %użycie funkcji w celu przypisania wartości i wyświetlenie w konsoli
