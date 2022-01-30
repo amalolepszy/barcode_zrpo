@@ -6,7 +6,7 @@ clc;
 %-----------------------------------------------------
 %wczytywanie barcode'ów 1D
 %----------------------------------------------------
-%witaj andrzeju
+
 upca = imread('upc-a.jpg');
 upce = imread('upc-e.jpg');
 ean8 = imread('ean-8.jpg');
