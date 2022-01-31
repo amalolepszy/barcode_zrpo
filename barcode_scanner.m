@@ -137,6 +137,8 @@ figure('Name','Real Code')
     Imsg = insertShape(Imsg,'Line',[1 xyBegin(2) imSize(2) xyBegin(2)],'LineWidth',5);
 
     imshow(Imsg);
+    title('Wykryte: '+detectedBarcode);
+    xlabel('Odkodowane: '+msg);
     clear all;
 %Qr code
 
@@ -152,4 +154,5 @@ figure('Name','Real Code')
     Imsg = insertShape(photo2, "FilledCircle", [loc, ...
     repmat(10, length(loc), 1)],"Color","red","Opacity",1);
     imshow(Imsg);
-    
+    title('Wykryte: '+detectedBarcode);
+    xlabel('Odkodowane: '+msg);
