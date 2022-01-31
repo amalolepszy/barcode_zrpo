@@ -65,7 +65,8 @@ while i <= size(tab_1D,2)
     
     i=i+1;
 end
-
+%wyczyszczenie obszaru roboczego z niepotrzebnych już zmiennych
+clear all;
 %------------------------------------------------------------------------
 %wczytywanie kodów 2-D
 %------------------------------------------------------------------------
@@ -85,12 +86,14 @@ figure('Name', 'Kody 2-D');
 
 i = 1;
 while i <= size(tab_2D,2)
-    subplot(2,2,i);
+    subplot(4,1,i);
     imshow(cell2mat(tab_2D(i))); %zmiana typu cell na array w celu wyświetlenia
     title(string(title_2D(i))); %zmiana typu cell na string
     i=i+1;
 end
 
+%Wyświetlenie przetworzonych barcodów 2-D
+figure('Name','Kody 2-D');
 i = 1;
 while i <= size(tab_2D,2)
     a = cell2mat(tab_2D(i)); %zmiana typu cell na array
@@ -103,14 +106,13 @@ while i <= size(tab_2D,2)
     disp("Decoded barcode message: " + msg);
     disp("barcode type: " + detectedBarcode);
 
+    %Wyświetlenie obszaru kodu 2-D
     xyText =  loc(2,:);
-    Imsg = insertText(a,xyText,msg,"BoxOpacity",1,"FontSize",25);
-
-    Imsg = insertShape(Imsg, "FilledCircle", [loc, ...
+    Imsg = insertShape(a, "FilledCircle", [loc, ...
         repmat(10, length(loc), 1)],"Color","red","Opacity",1);
 
     % Wyświetlenie przetworzonego obrazu
-    subplot(2,2,i);
+    subplot(4,1,i);
     imshow(Imsg);
     title('Wykryte: '+detectedBarcode);
     xlabel('Odkodowane: '+msg);
