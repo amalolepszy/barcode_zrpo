@@ -128,31 +128,31 @@ photo = imread("realCode.png");
 figure('Name','Real Code')
 
 [msg,detectedBarcode, loc] = readBarcode(photo);
-    disp("Decoded barcode message: " + msg);
-    disp("barcode type: " + detectedBarcode);
+disp("Decoded barcode message: " + msg);
+disp("barcode type: " + detectedBarcode);
 
-    xyBegin = loc(1,:);
-    Imsg = insertText(photo,xyBegin,msg,'BoxOpacity',1,'FontSize',20);
-    imSize = size(Imsg);
-    Imsg = insertShape(Imsg,'Line',[1 xyBegin(2) imSize(2) xyBegin(2)],'LineWidth',5);
+xyBegin = loc(1,:);
+Imsg = insertText(photo,xyBegin,msg,'BoxOpacity',1,'FontSize',20);
+imSize = size(Imsg);
+Imsg = insertShape(Imsg,'Line',[1 xyBegin(2) imSize(2) xyBegin(2)],'LineWidth',5);
 
-    imshow(Imsg);
-    title('Wykryte: '+detectedBarcode);
-    xlabel('Odkodowane: '+msg);
-    clear all;
+imshow(Imsg);
+title('Wykryte: '+detectedBarcode);
+xlabel('Odkodowane: '+msg);
+clear all;
 %Qr code
 
-    photo2 = imread("QRcode.png");
-    figure('Name','Real QR Code');
+photo2 = imread("QRcode.png");
+figure('Name','Real QR Code');
 
-      [msg,detectedBarcode, loc] = readBarcode(photo2);
-    disp("Decoded barcode message: " + msg);
-    disp("barcode type: " + detectedBarcode);
+[msg,detectedBarcode, loc] = readBarcode(photo2);
+disp("Decoded barcode message: " + msg);
+disp("barcode type: " + detectedBarcode);
 
-    %Wyświetlenie obszaru kodu 2-D
-    xyText =  loc(2,:);
-    Imsg = insertShape(photo2, "FilledCircle", [loc, ...
-    repmat(10, length(loc), 1)],"Color","red","Opacity",1);
-    imshow(Imsg);
-    title('Wykryte: '+detectedBarcode);
-    xlabel('Odkodowane: '+msg);
+%Wyświetlenie obszaru kodu 2-D
+xyText =  loc(2,:);
+Imsg = insertShape(photo2, "FilledCircle", [loc, ...
+repmat(10, length(loc), 1)],"Color","red","Opacity",1);
+imshow(Imsg);
+title('Wykryte: '+detectedBarcode);
+xlabel('Odkodowane: '+msg);
