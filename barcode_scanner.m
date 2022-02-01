@@ -64,8 +64,10 @@ while i <= size(tab_1D,2)
     
     i=i+1;
 end
+
 %wyczyszczenie obszaru roboczego z niepotrzebnych już zmiennych
 clear all;
+
 %------------------------------------------------------------------------
 %wczytywanie kodów 2-D
 %------------------------------------------------------------------------
@@ -93,6 +95,7 @@ end
 
 %Wyświetlenie przetworzonych barcodów 2-D
 figure('Name','Kody 2-D');
+
 i = 1;
 while i <= size(tab_2D,2)
     a = cell2mat(tab_2D(i)); %zmiana typu cell na array
@@ -119,6 +122,7 @@ while i <= size(tab_2D,2)
 
     i=i+1;
 end
+
 %Wyczyszczenie kodu z niepotrzebnych zmiennych
 clear all;
 %=========================================================
